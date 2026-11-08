@@ -21,4 +21,7 @@ Supabase) over custom infrastructure.
 - Use fake sample data only until the privacy items in spec section 12 are done.
 - Database changes go in a new file in `supabase/migrations/`; never edit
   a migration that has already been applied to the real Supabase project.
+- Live Supabase project ref: `vrjwfhufiwodnhjzoono`. Apply new migrations
+  with `npm run db:migrate` only after `npm run test:db` passes. In cloud
+  sessions the access token for api.supabase.com is injected by the proxy.
 - Run `npm run test:db`, `npm run lint` and `npm run build` before pushing.

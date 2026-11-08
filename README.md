@@ -37,6 +37,13 @@ Run the database tests (needs PostgreSQL installed locally):
 npm run test:db
 ```
 
+Load new database changes into the live Supabase project (only migrations
+it hasn't had yet; needs a Supabase access token, see the script):
+
+```bash
+npm run db:migrate
+```
+
 Check the code for mistakes and make a production build:
 
 ```bash

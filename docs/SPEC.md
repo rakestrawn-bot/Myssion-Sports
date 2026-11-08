@@ -105,6 +105,7 @@ Decisions made while building, newest first. The code lives in the Myssion-Sport
 
 | Date | Area | Decision |
 | --- | --- | --- |
+| Nov 8, 2026 | Live database | Supabase project "myssion-sports" created on the free plan and the core structure loaded. New database changes are applied by a script that loads only migrations the project hasn't had yet. Sample data only until section 12 is done. |
 | Nov 8, 2026 | Website | Next.js with TypeScript, to be hosted on Vercel. |
 | Nov 8, 2026 | Database | Supabase (Postgres). Every database change is a numbered migration file in the repository, tested on a local copy before it goes live. |
 | Nov 8, 2026 | Data separation | Two layers. Every record carries its organization, and child records must point to a parent in the same organization, so the database rejects cross-organization links. Row-level security then limits each user to their own organization's rows. |
