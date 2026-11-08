@@ -99,6 +99,21 @@ Every rule has a severity set by the league manager: **off**, **warn**, or **har
 - Managed hosting and database, such as Vercel and Supabase.
 - Use row-level security or an equivalent so organizations can never see each other's data.
 
+### Build decisions
+
+Decisions made while building, newest first. The code lives in the Myssion-Sports GitHub repository.
+
+| Date | Area | Decision |
+| --- | --- | --- |
+| Nov 8, 2026 | Website | Next.js with TypeScript, to be hosted on Vercel. |
+| Nov 8, 2026 | Database | Supabase (Postgres). Every database change is a numbered migration file in the repository, tested on a local copy before it goes live. |
+| Nov 8, 2026 | Data separation | Two layers. Every record carries its organization, and child records must point to a parent in the same organization, so the database rejects cross-organization links. Row-level security then limits each user to their own organization's rows. |
+| Nov 8, 2026 | Fields and zones | Venue → field → zones. A layout (e.g. "Two 7v7") lists child fields, and each child field claims one or more zones of its own parent field. A child field cannot claim another field's zones. |
+| Nov 8, 2026 | Conflicts | Two bookings conflict only when they share a zone and their times overlap. A game that starts exactly when another ends is not a conflict. |
+| Nov 8, 2026 | Availability | Weekly windows are set on the parent field. A child field can have its own windows, which replace the parent's for that child field. |
+| Nov 8, 2026 | Bookings | A booking (child field + start + end) is separate from a game. Games will point to a booking, so practices or rentals can use the same conflict check later. |
+| Nov 8, 2026 | Phase 1 access | League staff have full access within their own organization. Coaches and club administrators can see their organization but nothing else until phase 2. The platform owner sees every organization. |
+
 ## 12. Privacy and Compliance
 
 The app stores minors' information and will serve organizations in multiple states. Before real data goes in: confirm City of Sunny Isles Beach IT rules on hosting and kids' data, research child-privacy obligations (for example COPPA and state laws), and put a terms of service and privacy policy in place. Use fake data until then.
