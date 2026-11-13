@@ -10,7 +10,7 @@ export const SUPABASE_URL =
   process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://vrjwfhufiwodnhjzoono.supabase.co";
 
 export const SUPABASE_PUBLISHABLE_KEY =
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "";
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? "sb_publishable_bt_L2V2Jo-5emrtGzo1hGw_UR1e-cS3";
 
 // False until the publishable key is filled in above (or set as an
 // environment variable). Sign-in is switched off until then.
