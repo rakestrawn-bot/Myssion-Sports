@@ -105,6 +105,7 @@ Decisions made while building, newest first. The code lives in the Myssion-Sport
 
 | Date | Area | Decision |
 | --- | --- | --- |
+| Nov 13, 2026 | Sign-in | Email link sign-in (no passwords) for phase 1. Passwords can be added later on the same accounts, since accounts are tied to the email address. Before real users arrive, connect a proper email service so sign-in emails aren't limited to a few per hour. |
 | Nov 8, 2026 | Live database | Supabase project "myssion-sports" created on the free plan and the core structure loaded. New database changes are applied by a script that loads only migrations the project hasn't had yet. Sample data only until section 12 is done. |
 | Nov 8, 2026 | Website | Next.js with TypeScript, to be hosted on Vercel. |
 | Nov 8, 2026 | Database | Supabase (Postgres). Every database change is a numbered migration file in the repository, tested on a local copy before it goes live. |

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="mx-auto flex min-h-screen max-w-2xl flex-col justify-center gap-4 px-4 py-16">
@@ -5,7 +7,11 @@ export default function Home() {
       <p className="text-lg text-gray-600 dark:text-gray-400">
         League management for venues, divisions, scheduling, rosters and standings.
       </p>
-      <p className="text-sm text-gray-500">Phase 1 is in development.</p>
+      <p>
+        <Link href="/login" className="inline-block rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700">
+          Sign in
+        </Link>
+      </p>
     </main>
   );
 }
