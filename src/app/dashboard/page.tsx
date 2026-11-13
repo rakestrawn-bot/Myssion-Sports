@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { isSupabaseConfigured } from "@/lib/supabase/config";
 import { createClient } from "@/lib/supabase/server";
@@ -55,12 +56,14 @@ export default async function DashboardPage() {
         {memberships && memberships.length > 0 ? (
           <ul className="flex flex-col gap-2">
             {memberships.map((m) => (
-              <li
-                key={m.organizations?.slug}
-                className="rounded-md border border-gray-200 p-3 dark:border-gray-800"
-              >
-                <p className="font-medium">{m.organizations?.name}</p>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{ROLE_LABELS[m.role]}</p>
+              <li key={m.organizations?.slug}>
+                <Link
+                  href={`/o/${m.organizations?.slug}`}
+                  className="block rounded-md border border-gray-200 p-3 hover:border-blue-400 hover:bg-blue-50 dark:border-gray-800 dark:hover:bg-blue-950"
+                >
+                  <p className="font-medium">{m.organizations?.name}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{ROLE_LABELS[m.role]}</p>
+                </Link>
               </li>
             ))}
           </ul>
