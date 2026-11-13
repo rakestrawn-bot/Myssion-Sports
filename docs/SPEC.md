@@ -105,6 +105,7 @@ Decisions made while building, newest first. The code lives in the Myssion-Sport
 
 | Date | Area | Decision |
 | --- | --- | --- |
+| Nov 13, 2026 | Setup screens | Staff set up venues, fields, zones, layouts and weekly availability on the website. In one layout, each zone should belong to only one playing area; the screen shows a warning if two overlap (to become a rule under the severity system in section 9). Separate availability for an individual playing area is not on screen yet. |
 | Nov 13, 2026 | Sign-in | Email link sign-in (no passwords) for phase 1. Passwords can be added later on the same accounts, since accounts are tied to the email address. Before real users arrive, connect a proper email service so sign-in emails aren't limited to a few per hour. |
 | Nov 8, 2026 | Live database | Supabase project "myssion-sports" created on the free plan and the core structure loaded. New database changes are applied by a script that loads only migrations the project hasn't had yet. Sample data only until section 12 is done. |
 | Nov 8, 2026 | Website | Next.js with TypeScript, to be hosted on Vercel. |
